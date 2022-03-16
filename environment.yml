@@ -1,8 +1,8 @@
-name: waf_tutorial
+name: waf_tutorial_part1
 channels:
   - conda-forge
 dependencies:
-  - python=3.10
+  - python
   - numpy
   - matplotlib
   - pandas
@@ -11,3 +11,7 @@ dependencies:
   - pytest
   - pip
   - tqdm
+  - netCDF4
+  - xarray 
+  - ipykernel
+  - s3fs
