@@ -103,7 +103,7 @@ def clear_nan(X,y):
     y = np.asarray(y.squeeze(),dtype=int)
     return X,y
 
-def load_n_combine_df(path_to_data='../datasets/',features_to_keep=np.arange(0,36,1),class_labels=True):
+def load_n_combine_df(path_to_data='../datasets/sevir/',features_to_keep=np.arange(0,36,1),class_labels=True):
     df_ir = pd.read_csv(path_to_data + 'IR_stats_master.csv',index_col=0,low_memory=False,parse_dates=True)
     df_wv = pd.read_csv(path_to_data + 'WV_stats_master.csv',index_col=0,low_memory=False,parse_dates=True)
     df_vis = pd.read_csv(path_to_data + 'VIS_stats_master.csv',index_col=0,low_memory=False,parse_dates=True)
