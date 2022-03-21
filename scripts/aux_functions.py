@@ -103,7 +103,7 @@ def clear_nan(X,y):
     y = np.asarray(y.squeeze(),dtype=int)
     return X,y
 
-def load_n_combine_df(path_to_data='../datasets/sevir/',features_to_keep=np.arange(0,36,1),class_labels=True):
+def load_n_combine_df(path_to_data='../datasets/sevir/',features_to_keep=np.arange(0,36,1),class_labels=True,dropzeros=False):
     df_ir = pd.read_csv(path_to_data + 'IR_stats_master.csv',index_col=0,low_memory=False,parse_dates=True)
     df_wv = pd.read_csv(path_to_data + 'WV_stats_master.csv',index_col=0,low_memory=False,parse_dates=True)
     df_vis = pd.read_csv(path_to_data + 'VIS_stats_master.csv',index_col=0,low_memory=False,parse_dates=True)
@@ -112,6 +112,9 @@ def load_n_combine_df(path_to_data='../datasets/sevir/',features_to_keep=np.aran
 
     #get rid of that outlier 
     df_wv = df_wv.where(df_wv.q000 > -10000)
+    
+    if dropzeros:
+        df_li = df_li.where(df_li.c >= 1)
     
     #get rid of NaNs
     idx_keep = np.where(~df_vis.isna().all(axis=1).values)[0]
@@ -181,8 +184,6 @@ def load_n_combine_df(path_to_data='../datasets/sevir/',features_to_keep=np.aran
     X_validate = np.hstack([df_ir_va.to_numpy()*1e-2,df_wv_va.to_numpy()*1e-2,df_vis_va.to_numpy()*1e-4,df_vil_va.to_numpy()])
     X_test= np.hstack([df_ir_te.to_numpy()*1e-2,df_wv_te.to_numpy()*1e-2,df_vis_te.to_numpy()*1e-4,df_vil_te.to_numpy()])
 
-    #filter nans 
-    idx_train = np.isnan(X_train)
     #choose 
     X_train = X_train[:,features_to_keep]
     X_validate = X_validate[:,features_to_keep]

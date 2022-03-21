@@ -638,6 +638,20 @@ def make_performance_diagram_axis(ax=None,figsize=(5,5),CSIBOOL=True,FBBOOL=True
     ax.set_xlim([0,1])
     ax.set_ylim([0,1])
     
-    return ax 
+    return ax
+
+def get_mae(y,yhat):
+    """ Calcualte the mean absolute error """
+    return np.mean(np.abs(y-yhat))
+def get_rmse(y,yhat):
+    """ Calcualte the root mean squared error """
+    return np.sqrt(np.mean((y-yhat)**2))
+def get_bias(y,yhat):
+    """ Calcualte the mean bias (i.e., error) """
+    return np.mean(y-yhat)
+def get_r2(y,yhat):
+    """ Calcualte the coef. of determination (R^2) """
+    ybar = np.mean(y)
+    return 1 - (np.sum((y-yhat)**2))/(np.sum((y-ybar)**2))
 
 ###########################################################
