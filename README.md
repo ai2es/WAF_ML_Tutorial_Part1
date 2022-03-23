@@ -1,7 +1,7 @@
 # WAF Tutorial Part 1: Traditional ML 
 
 ## Introduction and Motivation
-This repository is the code associated with the WAF manuscript titled: "A Machine Learning Tutorial for Operational Meteorology, Part I: Traditional Machine Learning" written by Chase, R. J., McGovern, A., Burke, A., Harrison, D. and Lackmann, G. under review. If you have any issues with bugs or other questions please leave an 'issue' associated with this repo.
+This repository is the code associated with the WAF manuscript titled: "A Machine Learning Tutorial for Operational Meteorology, Part I: Traditional Machine Learning" written by Chase, R. J., Harrison,  Burke, A., D. McGovern, A.,  and Lackmann, G. *under review*. If you have any issues with bugs or other questions please leave an 'issue' associated with this repo.
 
 The goal of this manuscript is to familiarize more meteorologists with the tools of ML and accelerate the use of ML in meteorological workflows. In order to accomplish these goals, it is imperative to supply the code and a sandbox for readers to play around with. 
 
@@ -31,7 +31,7 @@ There are two main ways to interact with the code here.
 
    Once you get it setup, it would be good to have python and jupyter in this base environment.
 
-   ``` $ conda install -c conda-forge python,jupyter ``` 
+   ``` $ conda install -c conda-forge python jupyterlab ``` 
 
    2. Now that conda is installed, clone this repository to your local machine with the command:
 
