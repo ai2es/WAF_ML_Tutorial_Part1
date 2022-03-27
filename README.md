@@ -7,7 +7,7 @@ This first paper and repo (of two) covers the *traditional* supervised machine l
 
 ## Motivation
 
- <img src="images/webofscience_fig.png" width="300" height="100" class="center" />
+ <img src="images/webofscience_fig.png" width="600" height="200" class="center" />
 
 Meteorological journal articles mentioning or using machine learning is growing rapidly (see figure above or Figure 1 in the paper; Data are derived from Clarivate Web of Science). Since there is such rapid growth and formal instruction of machine learning topics catered for meteorologsts are scarce, this manuscript and code repository were created. The goal is to familiarize meteorologists with the tools of machine learning and accelerate the use of machine learning in meteorological workflows. In order to accomplish these goals, it is imperative that code and a sandbox for readers to play around with exisit. 
 
@@ -33,7 +33,7 @@ There are two main ways to interact with the code here.
 
    1. Setup a Python installation on the machine you are using. I
    recommend installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html) since
-   it requires less memory than the full Anaconda Python distribution. Follow
+   it requires less storage than the full Anaconda Python distribution. Follow
    the instructions on the miniconda page to download and install Miniconda
    for your operating system. It is best to do these steps in a terminal (Mac/Linux) or powershell (Windows)
 
@@ -71,4 +71,4 @@ There are two main ways to interact with the code here.
 
       ``` $ jupyter lab ``` 
 
-   9. You should be able to open the notebooks with this repository and you should be able to add the kernel we just installed with the name *waf_tutorial_part1*
+   9. You should be able to open the notebooks with this repository and you should be able to add the kernel we just installed with the name *waf_tutorial_part1*. To change from the default kernel, click on the ```kernels``` tab and select ```Change Kernel...``` and select the ```waf_tutorial_part1``` kernel.  
