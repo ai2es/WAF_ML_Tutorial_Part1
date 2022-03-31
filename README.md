@@ -25,8 +25,19 @@ There are two main ways to interact with the code here.
 
 ## Use Google Colab 
 
-   This is the reconmended and the quickest way to get started and only requires a (free) google account. Google Colab is a cloud instance of python that is run from your favorite web browser (although works best in Chrome). If you wish to use these notebooks, see the directory named colab_notebooks. There will be a button at the top of the notebook that says *open in colab*. This will take you to a new browser and open the notebook.
+   This is the recommended and the quickest way to get started and only requires a (free) google account. Google Colab is a cloud instance of python that is run from your favorite web browser (although works best in Chrome). If you wish to use these notebooks, navigate to the directory named ```colab_notebooks```. 
+   
+   Once in that directory, select the notebook you would like to run. There will be a button that looks like this once it loads: 
 
+   ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)
+
+   Click that button and it will take you to Google Colab where you can run the notebook. Please note it does not save things by default, so if you would like to save your own copy, you will need to go to File -> save a copy in drive
+
+   <img src="images/save2drive.png" width="200" height="275" class="center" />
+
+
+   Google colab is awesome for those who do not know how to install python, or just dont have the RAM/HDD locally to do things. You can think of it this way. This notebook is just providing the instructions (i.e., code) to do what you want it to. Meanwhile the data and physical computer are on some Google machine somewhere, which will execute the code in the notebook. By default this google owned machine will have 12 GB of RAM and about 100 GB of HDD (i.e. storage). 
+   
 ## Install python on your local machine and run notebooks there
 
    This is a bit more intense, especially for people who have never installed python on their machine. This method does allow you to always have the right packages installed and would enable you to actually download all of the SEVIR dataset if you want it (although it is very big... 924G total). 
