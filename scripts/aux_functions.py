@@ -159,14 +159,27 @@ def load_n_combine_df(path_to_data='../datasets/sevir/',features_to_keep=np.aran
     df_li_tr = df_li[train_slice]
     df_li_ot = df_li[other_slice]
 
+    #throw every other week into each the val and test 
+    va = np.arange(22,52,2)
+    te = np.arange(23,53,2)
+    dtime = pd.to_datetime(df_ir_ot.index)
 
-    idx = np.arange(0,df_ir_ot.shape[0])
-    #set random seed for reproducability 
-    np.random.seed(seed=42)
-    idx_v = np.random.choice(idx,size=int(idx.shape[0]/2),replace=False)
-    idx_v.sort()
-    idx_t = np.setdiff1d(idx,idx_v)
-    idx_t.sort()
+    idx_v = np.array([],dtype=int)
+    for v in va:
+        tmp = np.where(dtime.isocalendar().week == v)[0]
+        if len(tmp) == 0:
+            continue
+        else:
+            idx_v = np.append(idx_v,tmp)
+
+    idx_t = np.array([],dtype=int)      
+    for t in te:
+        tmp = np.where(dtime.isocalendar().week == t)[0]
+        if len(tmp) == 0:
+            continue
+        else:
+            idx_t = np.append(idx_t,tmp)
+
 
     df_ir_va = df_ir_ot.iloc[idx_v]
     df_ir_te = df_ir_ot.iloc[idx_t]
